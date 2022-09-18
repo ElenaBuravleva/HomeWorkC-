@@ -4,7 +4,7 @@ Console.WriteLine("Введите второе число");
 int number2 = Convert.ToInt32(Console.ReadLine());
 if (number1 == number2)
 {
-    Console.WriteLine("Введено одно и то же число");
+    Console.WriteLine("Введены одинаковые числа");
 }
 else
 {    int Max;
