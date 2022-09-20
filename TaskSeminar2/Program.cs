@@ -8,8 +8,7 @@
     }
     else
     {
-        int tens = number / 10;
-        int second = tens % 10;
+        int second = (number / 10) % 10;
         if (second >= 0)
         {
             Console.WriteLine("Вторая цифра этого числа: " + second);
@@ -46,7 +45,7 @@ void Zadacha15()
 {
     Console.WriteLine("Введите порядковый номер дня недели");
     int daynumber = Convert.ToInt32(Console.ReadLine());
-    if (daynumber <= 0 || daynumber >7)
+    if (daynumber <= 0 || daynumber > 7)
     {
         Console.WriteLine("Неверный диапазон");
     }
