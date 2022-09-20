@@ -1,4 +1,5 @@
-﻿void Zadacha10()
+﻿// При введении отрицательного трёхзначного числа выводится вторая цифра без знака "-"
+void Zadacha10()
 {
     Console.WriteLine("Введите трёхзначное число");
     int number = Convert.ToInt32(Console.ReadLine());
@@ -8,12 +9,7 @@
     }
     else
     {
-        int second = (number / 10) % 10;
-        if (second >= 0)
-        {
-            Console.WriteLine("Вторая цифра этого числа: " + second);
-        }
-        else Console.WriteLine("Вторая цифра этого числа: " + Math.Abs(second));
+        Console.WriteLine("Вторая цифра этого числа: " + Math.Abs((number / 10) % 10));
     }
 }
 
@@ -26,18 +22,11 @@ void Zadacha13()
     {
         Console.WriteLine("Третьей цифры нет");
     }
-    else if (number < 1000)
-    {
+     else 
+     {
+        while (number > 1000) number = number / 10;
         Console.WriteLine("Третья цифра этого числа: " + number % 10);
-    }
-    else while (number > 1000)
-        {
-            number = number / 10;
-            if (number < 1000)
-            {
-                Console.WriteLine("Третья цифра этого числа: " + number % 10);
-            }
-        }
+     }
 }
 
 
@@ -55,6 +44,6 @@ void Zadacha15()
     }
         else Console.WriteLine("День не является выходным");   
 }
-Zadacha10();
+//Zadacha10();
 Zadacha13();
-Zadacha15();
+//Zadacha15();
