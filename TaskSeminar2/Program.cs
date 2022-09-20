@@ -44,6 +44,6 @@ void Zadacha15()
     }
         else Console.WriteLine("День не является выходным");   
 }
-//Zadacha10();
+Zadacha10();
 Zadacha13();
-//Zadacha15();
+Zadacha15();
