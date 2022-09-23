@@ -2,6 +2,8 @@
 {
     Console.WriteLine("Задача о палиндроме");
     Console.WriteLine("Введите пятизначное число");
+    int second;
+    int fourth;
     int number = Convert.ToInt32(Console.ReadLine());
     if (Math.Abs(number) > 99999 || Math.Abs(number) < 10000)
     {
@@ -9,8 +11,8 @@
     }
     else
     {
-        int second = (number / 1000) % 10;
-        int fourth = number / 10;
+        second = (number / 1000) % 10;
+        fourth = number / 10;
         if (number / 10000 == number % 10 && second == fourth % 10)
         {
             Console.WriteLine("Введенное число является палиндромом");
