@@ -24,7 +24,7 @@ void FillArrayD(double[,] numbers, int min, int max)
         {
             if (random.Next(-1, 1) == -1) k = -1;
             else k = 1;
-            numbers[i, j] = Math.Round(random.NextDouble(), 2) * k;
+            numbers[i, j] = Math.Round(random.NextDouble(), 1) * k;
         }
     }
 }
