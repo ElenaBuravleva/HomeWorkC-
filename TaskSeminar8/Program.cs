@@ -84,19 +84,19 @@ void MinSumRow(int[,] numbers)
     int SumRow = 0;
     int MinSum = 1000;
     for (int i = 0; i < numbers.GetLength(0); i++)
+    {
+        SumRow = 0;
+        for (int j = 0; j < numbers.GetLength(1); j++)
         {
-            SumRow = 0;
-            for (int j = 0; j < numbers.GetLength(1); j++)
-            {
-                SumRow += numbers[i, j];               
-            }
-            if (MinSum > SumRow)
-            {
-                MinSum = SumRow;
-                NumRows = i;
-            }
+            SumRow += numbers[i, j];
         }
-    Console.WriteLine($"Наименьшая сумма элементов в строке № {NumRows + 1}");       
+        if (MinSum > SumRow)
+        {
+            MinSum = SumRow;
+            NumRows = i;
+        }
+    }
+    Console.WriteLine($"Наименьшая сумма элементов в строке № {NumRows + 1}");
 }
 
 void Spiral()
@@ -112,12 +112,12 @@ void Spiral()
     for (int k = 1; k < N * N + 1; k++)
     {
         numbers[i, j] = k;
-        if (k < N || k == 3 * N)  
+        if (k < N || k == 3 * N)
         {
             stepi = 0;
             stepj = 1;
         }
-        if (k == N || k == 4 * N - 2)  
+        if (k == N || k == 4 * N - 2)
         {
             stepi = 1;
             stepj = 0;
@@ -127,7 +127,7 @@ void Spiral()
             stepi = 0;
             stepj = -1;
         }
-         if (k == 3 * N - 2)
+        if (k == 3 * N - 2)
         {
             stepi = -1;
             stepj = 0;
@@ -137,6 +137,43 @@ void Spiral()
     }
     PrintArray(numbers);
 }
+
+void Multiplication()
+{
+    Console.WriteLine("_________________________");
+    Console.WriteLine("Умножение матриц");
+    Random random = new Random();
+    int size = random.Next(3, 5);
+    int[,] numbers1 = new int[size, size];
+    int[,] numbers2 = new int[size, size];
+    FillArray(numbers1, -9, 10);
+    FillArray(numbers2, -9, 10);
+    PrintArray(numbers1);
+    if (size == 3) Console.WriteLine("        X");
+    else Console.WriteLine("            X");
+    PrintArray(numbers2);
+    if (size == 3) Console.WriteLine("        =");
+    else Console.WriteLine("            =");
+    MultiplicatonMatrix(numbers1, numbers2, size);
+}
+
+void MultiplicatonMatrix(int[,] numbers1, int[,] numbers2, int size)
+{
+    int[,] numbers = new int[size, size];
+    for (int k = 0; k < size; k++)
+    {
+        for (int l = 0; l < size; l++)
+        {
+            numbers[k, l] = 0;
+            for (int m = 0; m < size; m++)
+            {
+                numbers[k, l] += numbers1[k, m] * numbers2[m, l];
+            }
+        }
+    }
+    PrintArray(numbers);
+}
 Zadacha54();
 Zadacha56();
 Spiral();
+Multiplication();
